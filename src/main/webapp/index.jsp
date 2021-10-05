@@ -13,13 +13,20 @@
 <h1>Actions JDBC</h1>
 
 <ul>
-    <li><a
-            href="${pageContext.request.contextPath}/jdbc?action=connexion">Connexion</a>
-    <li><a
-            href="${pageContext.request.contextPath}/jdbc?action=requeteA">RequêteA</a>
+    <li>
+        <a href="${pageContext.request.contextPath}/jdbc?action=connexion">Connexion</a>
     </li>
     <li>
-
+        <a href="${pageContext.request.contextPath}/jdbc?action=requeteA">RequêteA</a>
+    </li>
+    <li>
+        <a href="${pageContext.request.contextPath}/jdbc?action=requeteB">RequêteB</a>
+    </li>
+    <li>
+        <a href="${pageContext.request.contextPath}/jdbc?action=requeteC&idArtiste=1">RequêteC</a>
+    </li>
+    <li>
+        <a href="${pageContext.request.contextPath}/jdbc?action=requeteD&idArtiste=1">RequêteD</a>
     </li>
 </ul>
 
