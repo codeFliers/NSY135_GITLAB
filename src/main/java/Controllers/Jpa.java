@@ -27,6 +27,7 @@ public class Jpa extends HttpServlet {
 
                 if (TestsJpa.getEntityManager().isOpen()) {
                     maVue = VUES + "connexion.jsp";
+                    //...
                 }
             }/*else if() {
 

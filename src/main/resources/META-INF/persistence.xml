@@ -4,6 +4,11 @@
              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd"
              version="2.2">
     <persistence-unit name="default">
+        <!-- Declare entity classes -->
+        <class>Models.Artiste</class>
+        <class>Models.Film</class>
+        <class>Models.Role</class>
+
 
         <properties>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
@@ -11,13 +16,18 @@
             <property name="javax.persistence.jdbc.user" value="orm" />
             <property name="javax.persistence.jdbc.password" value="orm" />
 
+           <!--<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect"/>-->
+            <!--<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect"/>-->
+            <property name="dialect" value="org.hibernate.dialect.MySQLDialect"></property>
 
             <!-- log of the SQL Request -->
             <property name="hibernate.show_sql" value="true"/>
             <!-- improve the previous functionality -->
             <property name="hibernate.format_sql" value="true"/>
             <!-- destroy and re-create the database from the entities (classes/tables) when the app start -->
-            <property name="hibernate.hbm2ddl.auto" value="create"/>
+            <!--<property name="hibernate.hbm2ddl.auto" value="create"/>-->
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+
         </properties>
     </persistence-unit>
 </persistence>
