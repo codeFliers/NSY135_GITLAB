@@ -5,5 +5,19 @@
              version="2.2">
     <persistence-unit name="default">
 
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/webscope2" />
+            <property name="javax.persistence.jdbc.user" value="orm" />
+            <property name="javax.persistence.jdbc.password" value="orm" />
+
+
+            <!-- log of the SQL Request -->
+            <property name="hibernate.show_sql" value="true"/>
+            <!-- improve the previous functionality -->
+            <property name="hibernate.format_sql" value="true"/>
+            <!-- destroy and re-create the database from the entities (classes/tables) when the app start -->
+            <property name="hibernate.hbm2ddl.auto" value="create"/>
+        </properties>
     </persistence-unit>
 </persistence>

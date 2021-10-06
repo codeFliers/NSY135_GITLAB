@@ -28,6 +28,9 @@
     <li>
         <a href="${pageContext.request.contextPath}/jdbc?action=requeteD&idArtiste=1">RequêteD</a>
     </li>
+    <li>
+        <a href="${pageContext.request.contextPath}/Jpa?action=connexion">Connextion JPA</a>
+    </li>
 </ul>
 
 </body>

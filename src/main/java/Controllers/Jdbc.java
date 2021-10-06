@@ -52,11 +52,9 @@ public class Jdbc extends HttpServlet {
                 request.setAttribute("artiste", jdbc.getArtiste(param1));
                 maVue = VUES + "requeteC.jsp";
             } else if(action.equals("requeteD")) {
-                System.out.println(1);
                 jdbc.connect(SERVER, BD, LOGIN, PASSWORD);
                 Integer param1 = Integer.parseInt(request.getParameter("idArtiste"));
                 request.setAttribute("artiste", jdbc.getRealisateur(param1));
-                System.out.println(2);
                 maVue = VUES + "requeteD.jsp";
             }
         } catch (Exception e) {
