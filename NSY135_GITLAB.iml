@@ -68,5 +68,6 @@
     <orderEntry type="library" scope="TEST" name="Maven: org.junit.platform:junit-platform-engine:1.7.1" level="project" />
     <orderEntry type="library" name="jsp-api-2.1-6.0.2" level="project" />
     <orderEntry type="library" name="mysql-connector-java-5.1.49-bin" level="project" />
+    <orderEntry type="library" name="ojdbc14-10g" level="project" />
   </component>
 </module>

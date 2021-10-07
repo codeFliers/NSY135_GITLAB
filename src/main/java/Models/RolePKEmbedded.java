@@ -3,20 +3,21 @@ package Models;
 import javax.persistence.Embeddable;
 import java.io.Serializable;
 
-@Embeddable
+@Embeddable //<=
 public class RolePKEmbedded implements Serializable{
-    private int id_artiste;
+    //Composite key (same name as in Role)
+    private int id_acteur;
     private int id_film;
 
     public RolePKEmbedded(){
         //
     }
 
-    public int getIdArtiste() {
-        return id_artiste;
+    public int getIdActeur() {
+        return id_acteur;
     }
-    public void setIdArtiste(int id_artiste) {
-        this.id_artiste = id_artiste;
+    public void setIdActeur(int id_acteur) {
+        this.id_acteur = id_acteur;
     }
 
     public int getIdFilm() {
@@ -32,7 +33,7 @@ public class RolePKEmbedded implements Serializable{
         if(o != null && o instanceof RolePKEmbedded) {
             RolePKEmbedded rolePKEmbedded = (RolePKEmbedded) o;
 
-            if(rolePKEmbedded.getIdArtiste() == this.getIdArtiste() &&
+            if(rolePKEmbedded.getIdActeur() == this.getIdActeur() &&
                     rolePKEmbedded.getIdFilm() == this.getIdFilm()) {
                 bool = true;
             }
@@ -42,6 +43,6 @@ public class RolePKEmbedded implements Serializable{
 
     @Override
     public int hashCode() {
-        return this.getIdFilm()+this.getIdArtiste();
+        return this.getIdFilm()+this.getIdActeur();
     }
 }

@@ -1,13 +1,11 @@
 package Models;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name="Film")
-public class Film {
+public class Film implements Serializable {
     @Column(length=100, name="titre", table="Film", nullable = false)
     private String titre;
     @Column(length=100, name="annee", table="Film", nullable = false)
@@ -17,13 +15,15 @@ public class Film {
     @Column(length=100, name="resume", table="Film", nullable = false)
     private String resume;
 
+
     @Column(name="id", table="Film")
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
 
     public Film() {
-
+        //
     }
 
     public String getTitre() {

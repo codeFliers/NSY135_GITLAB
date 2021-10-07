@@ -6,23 +6,23 @@ import java.io.Serializable;
 @Entity
 @Table(name="Role")
 public class Role implements Serializable {
-    @EmbeddedId
+    @EmbeddedId //<= reference to the class describing the primary key (RolePKEmbedded)
     private RolePKEmbedded rolePKEmbedded;
 
     @Column(length=100, name="nom_role", table="Role", nullable = false)
     private String nom_role;
 
-    @MapsId("id_artiste")
+    @MapsId("id_acteur") //<= Designate to later form the composite key
     @ManyToOne
-    @JoinColumn(name="id_artiste",
-            foreignKey=@ForeignKey(name="FK_ROLE_ARTISTES"))
+    @JoinColumn(name="id_acteur",
+            foreignKey=@ForeignKey(name="FK_ROLES_ACTEURS"))
     private Artiste artiste;
 
 
-    @MapsId("id_film")
+    @MapsId("id_film") //<= Designate to later form the composite key
     @ManyToOne
     @JoinColumn(name="id_film",
-            foreignKey=@ForeignKey(name="FK_ROLE_FILMS"))
+            foreignKey=@ForeignKey(name="FK_ROLES_FILMS"))
     private Film film;
 
 
