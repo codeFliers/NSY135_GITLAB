@@ -7,17 +7,17 @@ import java.util.Objects;
 @Embeddable //<=
 public class NotationPKEmbedded implements Serializable {
     //Composite key (same name as in Role)
-    private int id_film;
+    private Long id_film;
     private String email;
 
     public NotationPKEmbedded(){
         //
     }
 
-    public int getIdFilm() {
+    public Long getIdFilm() {
         return id_film;
     }
-    public void setIdFilm(int id_film) {
+    public void setIdFilm(Long id_film) {
         this.id_film = id_film;
     }
 

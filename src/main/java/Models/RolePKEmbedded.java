@@ -6,24 +6,34 @@ import java.io.Serializable;
 @Embeddable //<=
 public class RolePKEmbedded implements Serializable{
     //Composite key (same name as in Role)
-    private int id_acteur;
-    private int id_film;
+    private Long id_acteur;
+    private Long id_film;
 
     public RolePKEmbedded(){
         //
     }
 
-    public int getIdActeur() {
+    /*
+        public int getId_Acteur() {
+        return id_acteur;
+        }
+        public void setId_Acteur(int id_acteur) {
+            this.id_acteur = id_acteur;
+        }
+
+     */
+    public Long getId_acteur() {
         return id_acteur;
     }
-    public void setIdActeur(int id_acteur) {
+
+    public void setId_acteur(Long id_acteur) {
         this.id_acteur = id_acteur;
     }
 
-    public int getIdFilm() {
+    public Long getIdFilm() {
         return id_film;
     }
-    public void setIdFilm(int idFilm) {
+    public void setIdFilm(Long idFilm) {
         this.id_film = idFilm;
     }
 
@@ -33,7 +43,7 @@ public class RolePKEmbedded implements Serializable{
         if(o != null && o instanceof RolePKEmbedded) {
             RolePKEmbedded rolePKEmbedded = (RolePKEmbedded) o;
 
-            if(rolePKEmbedded.getIdActeur() == this.getIdActeur() &&
+            if(rolePKEmbedded.getId_acteur() == this.getId_acteur() &&
                     rolePKEmbedded.getIdFilm() == this.getIdFilm()) {
                 bool = true;
             }
@@ -43,6 +53,8 @@ public class RolePKEmbedded implements Serializable{
 
     @Override
     public int hashCode() {
-        return this.getIdFilm()+this.getIdActeur();
+        Long v = this.getIdFilm()+this.getId_acteur();
+        int res = Integer.parseInt(v.toString());
+        return res;
     }
 }

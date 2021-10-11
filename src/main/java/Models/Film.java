@@ -21,9 +21,15 @@ public class Film implements Serializable {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
-
     public Film() {
         //
+    }
+    public Film(String titre, Integer annee, String genre, String resume) {
+        this();
+        this.titre = "Le chapelier";
+        this.annee = annee;
+        this.genre = genre;
+        this.resume = resume;
     }
 
     public String getTitre() {

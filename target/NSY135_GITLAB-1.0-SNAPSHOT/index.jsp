@@ -31,6 +31,9 @@
     <li>
         <a href="${pageContext.request.contextPath}/Jpa?action=connexion">Connextion JPA</a>
     </li>
+    <li>
+        <a href="${pageContext.request.contextPath}/Jpa?action=insertion">Insertion JPA</a>
+    </li>
 </ul>
 
 </body>

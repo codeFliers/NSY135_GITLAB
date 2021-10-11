@@ -6,7 +6,7 @@
     <title>Requête D</title>
 </head>
 <body>
-    <p><a href="${pageContext.request.contextPath}/jdbc">Accueil</a></p>
+    <p><a href="${pageContext.request.contextPath}/index.jsp">Accueil</a></p>
     <h1>Info réalisateur</h1>
     <p><c:out value="${requestScope.artiste.nom}"/></p>
     <p><c:out value="${requestScope.artiste.prenom}"/></p>

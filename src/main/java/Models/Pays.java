@@ -12,19 +12,23 @@ public class Pays implements Serializable {
     @Column(length=100, name="langue", table="Pays", nullable = false)
     private String langue;
 
-    @OneToMany
-    @JoinColumn(name="id_pays",
+    @OneToMany(cascade={CascadeType.PERSIST, CascadeType.REMOVE})
+    @JoinColumn(name="code_pays",
             foreignKey = @ForeignKey(name="fk_films_pays"))
     private List<Film> listFilm;
 
     @Column(name="code", table="Pays")
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private String code;
-
 
     public Pays() {
         //
+    }
+    public Pays(String code, String nom, String langue) {
+        this();
+        this.code = code;
+        this.nom = nom;
+        this.langue = langue;
     }
 
     public String getNom() {

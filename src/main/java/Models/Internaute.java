@@ -13,12 +13,24 @@ public class Internaute implements Serializable {
     @Column(length=100, name="mot_de_passe", table="Internaute", nullable = false)
     private String motDePasse;
     @Column(length=100, name="annee_naissance", table="Internaute", nullable = false)
-    private String dateNaissance;
+    private int dateNaissance;
 
     @Column(name="id", table="Internaute")
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private String email;
+
+    public Internaute() {
+    }
+
+    public Internaute(String email, String nom, String prenom, String motDePasse, int dateNaissance) {
+        this();
+        this.email = email;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.motDePasse = motDePasse;
+        this.dateNaissance = dateNaissance;
+    }
+
 
     public String getNom() {
         return nom;
@@ -41,10 +53,10 @@ public class Internaute implements Serializable {
         this.motDePasse = motDePasse;
     }
 
-    public String getDateNaissance() {
+    public int getDateNaissance() {
         return dateNaissance;
     }
-    public void setDateNaissance(String dateNaissance) {
+    public void setDateNaissance(int dateNaissance) {
         this.dateNaissance = dateNaissance;
     }
 

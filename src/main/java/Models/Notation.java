@@ -13,14 +13,14 @@ public class Notation  implements Serializable{
     private int note;
 
     @MapsId("id_film") //<= Designate to later form the composite key
-    @ManyToOne
+    @ManyToOne(cascade={CascadeType.PERSIST, CascadeType.REMOVE})
     @JoinColumn(name="id_film",
             foreignKey=@ForeignKey(name="FK_NOTATIONS_FILMS"))
     private Film film;
 
 
     @MapsId("email") //<= Designate to later form the composite key
-    @ManyToOne
+    @ManyToOne(cascade={CascadeType.PERSIST, CascadeType.REMOVE})
     @JoinColumn(name="email",
             foreignKey=@ForeignKey(name="FK_NOTATIONS_EMAILS"))
     private Internaute internaute;
@@ -29,11 +29,18 @@ public class Notation  implements Serializable{
         this.notationPKEmbedded = new NotationPKEmbedded();
     }
 
+    public Notation(Film film, Internaute internaute, int note) {
+        this();
+        this.film = film;
+        this.internaute = internaute;
+        this.note = note;
+    }
+
 
     public NotationPKEmbedded getNotationPKEmbedded() {
         return notationPKEmbedded;
     }
-    public void setNotationPKEmbedded(NotationPKEmbedded notationPKEmbedded) {
+    private void setNotationPKEmbedded(NotationPKEmbedded notationPKEmbedded) {
         this.notationPKEmbedded = notationPKEmbedded;
     }
 

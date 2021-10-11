@@ -29,10 +29,14 @@ public class Jpa extends HttpServlet {
                     maVue = VUES + "connexion.jsp";
                     //...
                 }
-            }/*else if() {
+            }else if(action.equals("insertion")) {
 
+                if (TestsJpa.getEntityManager().isOpen()) {
+                    maVue = VUES + "insertion.jsp";
+                    testsJpa.testInsertion();
+                }
             }
-             */
+
         }catch(Exception e) {
             maVue = VUES + "exception.jsp";
             request.setAttribute("message", e.getMessage());

@@ -14,7 +14,7 @@ public class Artiste implements Serializable {
     @Column(length=100, name="annee_naissance", table="Artiste", nullable = false)
     private Integer annee_naissance;
 
-    @OneToMany
+    @OneToMany(cascade={CascadeType.PERSIST, CascadeType.REMOVE})
     @JoinColumn(name="id_realisateur",
             foreignKey = @ForeignKey(name="fk_films_artistes"))
     private List<Film> listFilm;
@@ -25,6 +25,13 @@ public class Artiste implements Serializable {
     private Long id;
 
     public Artiste() {
+        //
+    }
+    public Artiste(String nom, String prenom, Integer annee_naissance) {
+        this();
+        this.nom = nom;
+        this.prenom = prenom;
+        this.annee_naissance = annee_naissance;
     }
 
     public String getNom() {
