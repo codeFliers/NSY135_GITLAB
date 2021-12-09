@@ -3,7 +3,7 @@ package Models;
 import javax.persistence.Embeddable;
 import java.io.Serializable;
 
-@Embeddable //<=
+@Embeddable //<= It's the 'components' (composant/osite)
 public class RolePKEmbedded implements Serializable{
     //Composite key (same name as in Role)
     private Long id_acteur;

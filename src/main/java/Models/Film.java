@@ -10,8 +10,6 @@ public class Film implements Serializable {
     private String titre;
     @Column(length=100, name="annee", table="Film", nullable = false)
     private Integer annee;
-    @Column(length=100, name="genre", table="Film", nullable = false)
-    private String genre;
     @Column(length=100, name="resume", table="Film", nullable = false)
     private String resume;
 
@@ -21,12 +19,15 @@ public class Film implements Serializable {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
+    @Embedded
+    private Genre genre;
+
     public Film() {
         //
     }
-    public Film(String titre, Integer annee, String genre, String resume) {
+    public Film(String titre, Integer annee, Genre genre, String resume) {
         this();
-        this.titre = "Le chapelier";
+        this.titre = titre;
         this.annee = annee;
         this.genre = genre;
         this.resume = resume;
@@ -46,10 +47,10 @@ public class Film implements Serializable {
         this.annee = annee;
     }
 
-    public String getGenre() {
+    public Genre getGenre() {
         return genre;
     }
-    public void setGenre(String genre) {
+    public void setGenre(Genre genre) {
         this.genre = genre;
     }
 

@@ -8,7 +8,7 @@
         <class>Models.Artiste</class>
         <class>Models.Film</class>
         <class>Models.Role</class>
-
+        <class>Models.Genre</class>
         <properties>
             <!--
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />

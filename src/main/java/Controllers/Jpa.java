@@ -35,6 +35,9 @@ public class Jpa extends HttpServlet {
                     maVue = VUES + "insertion.jsp";
                     testsJpa.testInsertion();
                 }
+
+            }else if(action.equals("insertData")) {
+
             }
 
         }catch(Exception e) {

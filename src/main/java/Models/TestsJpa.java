@@ -27,7 +27,8 @@ public class TestsJpa {
         em.getTransaction().begin();
 
         Pays monPays = new Pays("is", "Islande", "islandais");
-        Film film = new Film("Le chapelier", 1993, "Action", "Il était une fois ...");
+        Genre genre = new Genre("Action");
+        Film film = new Film("Le chapelier", 1993, genre, "Il était une fois ...");
         Artiste monArtiste = new Artiste("Toto", "de Tata", 1993);
 
         List<Film> listFilmArtiste = new ArrayList<>();
